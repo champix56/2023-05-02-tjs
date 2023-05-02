@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 // import logo from './logo.svg';
 import "./App.css";
 import Button from "./components/ui/Button/Button";
 
+
 function App() {
+  //let counter=0;
+  const [counter, setcounter] = useState(0);
   return (
     <div className="App" data-testid="App">
-      <Button style={{color:'blue',textDecoration:'underline'}} backgroundColor="aquamarine"  onClick={()=>{}}      >
-          <img src="https://cdn1.iconfinder.com/data/icons/bootstrap-vol-3/16/menu-button-wide-256.png" />
-          <br />
-          hello
-      </Button>
-
-      <Button />
+      <div style={{textAlign:'center'}}>Counter value : {counter}</div>
+      <hr/>
+      <Button backgroundColor={'skyblue'}  onClick={()=>{setcounter(counter+1);console.log(counter);}}>+</Button>
+      <Button backgroundColor={'tomato'} onClick={()=>{setcounter(counter-1);console.log(counter);}}>-</Button>
     </div>
   );
 }
