@@ -13,4 +13,8 @@ Button.propTypes={
   onClick: PropTypes.func.isRequired,
   children: PropTypes.any.isRequired,
 };
+Button.defaultProps={
+  children:'Hello',
+  onClick: ()=>{},
+}
 export default Button;
