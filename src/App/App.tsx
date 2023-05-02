@@ -3,10 +3,16 @@ import React from 'react';
 import './App.css';
 import Button from './components/ui/Button/Button';
 
-function App(props) {
+function App() {
   return (
     <div className="App" data-testid="App">
-      DEMAT <Button/>
+      DEMAT 
+      <Button text="Bejamin" onClick={function(){console.log('hello');}}/>
+      <button>Reel</button>
+      <button>Reel</button>
+      <Button text="button"/>
+      <button>Reel</button>
+
     </div>
   );
 }
