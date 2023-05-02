@@ -1,0 +1,10 @@
+.Button{
+    padding: 10px 5px;
+    margin:5px 10px;
+    color: white;
+    background: skyblue;
+    font-size: large;
+    font-weight: 700;
+    border-radius: 7px;
+    border:none; 
+}
