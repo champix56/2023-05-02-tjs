@@ -10,6 +10,36 @@
       "withTest": true,
       "withStory": true,
       "withLazy": true
+    },
+    "functionCmp": {
+      "path": "src/App/components",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true,
+      "customTemplates":{
+        "component":"grc/genericFunction/TemplateName.js"
+      }
+    },
+    "uiCmp": {
+      "path": "src/App/components/ui",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true,
+      "customTemplates":{
+        "component":"grc/genericFunction/TemplateName.js"
+      }
+    },
+    "layoutCmp": {
+      "path": "src/App/components/ui",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true,
+      "customTemplates":{
+        "component":"grc/genericLayoutFunction/TemplateName.js"
+      }
     }
   }
 }
