@@ -1,0 +1,2 @@
+.WFirstGrow {display: flex;}
+.WFirstGrow>*:nth-child(1) {flex-grow: 1;}

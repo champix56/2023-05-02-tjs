@@ -2,15 +2,12 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./Header.module.css";
 
-const headerInitialState={};
+const headerInitialState = {};
 const Header = (props) => {
-  const [state, setstate] = useState(headerInitialState);
-  useEffect(() => {
-    return () => {};
-  }, [state]);
   return (
     <div className={styles.Header} data-testid="Header">
-      Header Component
+      Meme<span className={styles.dot}>.</span>
+      <span className={styles.js}>js</span>
     </div>
   );
 };

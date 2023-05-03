@@ -4,13 +4,9 @@ import styles from "./Footer.module.css";
 
 const footerInitialState={};
 const Footer = (props) => {
-  const [state, setstate] = useState(footerInitialState);
-  useEffect(() => {
-    return () => {};
-  }, [state]);
   return (
     <div className={styles.Footer} data-testid="Footer">
-      Footer Component
+      DESORBAIX / orsys &copy; 2023
     </div>
   );
 };
