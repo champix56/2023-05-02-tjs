@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styles from "./Button.module.css";
-
-const Button = (props) => {
+export interface IPropsButton{
+  onClick:Function;
+  backgroundColor:string;
+  children:string |React.ReactElement| Array<React.ReactElement|string>;
+  styles?:{};
+}
+const Button = (props:any) => {
   const [isClicked, setIsClicked] = useState(false);
   //
   useEffect(() => {
