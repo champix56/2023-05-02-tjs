@@ -13,7 +13,11 @@ const Button = (props) => {
         setIsClicked(false);
       }, 2000);
     }
-     
+     return () => {
+        if(descripteurTimeout){
+          clearTimeout(descripteurTimeout);
+        }
+     };
   }, [isClicked]);
   return (
     <button
