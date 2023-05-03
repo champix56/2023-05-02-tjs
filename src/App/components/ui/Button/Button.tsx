@@ -6,6 +6,7 @@ export interface IPropsButton{
   backgroundColor?:string;
   children:string |React.ReactElement| Array<React.ReactElement|string>;
   style?:{};
+  type?: 'button'|'submit'|'reset'|undefined
 }
 const Button: React.FC<IPropsButton> = (props) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -25,7 +26,7 @@ const Button: React.FC<IPropsButton> = (props) => {
      };
   }, [isClicked]);
   return (
-    <button
+    <button type={props.type}
       style={{ ...props.style, backgroundColor: props.backgroundColor }}
       className={
         isClicked ? styles.Button + " " + styles.clicked : styles.Button
@@ -45,10 +46,12 @@ Button.propTypes = {
   children: PropTypes.any.isRequired,
   backgroundColor: PropTypes.string,
   style: PropTypes.object,
+  type: PropTypes.oneOf(['button','submit','reset',undefined])
 };
 Button.defaultProps = {
   children: "Hello",
   onClick: () => {},
   backgroundColor: "skyblue",
+  type: 'button',
 };
 export default Button;
