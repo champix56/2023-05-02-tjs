@@ -3,15 +3,15 @@ import PropTypes from "prop-types";
 import styles from "./Button.module.css";
 export interface IPropsButton{
   onClick:Function;
-  backgroundColor:string;
+  backgroundColor?:string;
   children:string |React.ReactElement| Array<React.ReactElement|string>;
-  styles?:{};
+  style?:{};
 }
-const Button = (props:any) => {
+const Button: React.FC<IPropsButton> = (props) => {
   const [isClicked, setIsClicked] = useState(false);
   //
   useEffect(() => {
-    let descripteurTimeout = undefined;
+    let descripteurTimeout:any;
     if (isClicked) {
       descripteurTimeout=setTimeout(() => {
         console.log('descente de state');
