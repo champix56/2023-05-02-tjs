@@ -32,7 +32,7 @@ const MemeForm = (props) => {
         <input name="text" id="text" type="text" value="Le js m'a tué" />
         <br />
         <label for="x">
-          <h2 style="display: inline;">x :</h2>
+          <h2 style={{ display: "inline" }}>x :</h2>
         </label>
         <input
           class="MemeEditor_smallNumber__2ESzk"
@@ -42,7 +42,7 @@ const MemeForm = (props) => {
           value="121"
         />
         <label for="y">
-          <h2 style="display: inline;">y :</h2>
+          <h2 style={{ display: "inline" }}>y :</h2>
         </label>
         <input
           class="MemeEditor_smallNumber__2ESzk"
@@ -55,12 +55,12 @@ const MemeForm = (props) => {
         <br />
         <h2>Decorations</h2>
         <label for="color">
-          <h2 style="display: inline;">color :</h2>
+          <h2 style={{ display: "inline" }}>color :</h2>
         </label>
         <input name="color" id="color" type="color" value="#FFFFFF" />
         <br />
         <label for="fontSize">
-          <h2 style="display: inline;">font-size :</h2>
+          <h2 style={{ display: "inline" }}>font-size :</h2>
         </label>
         <input
           class="MemeEditor_smallNumber__2ESzk"
@@ -73,7 +73,7 @@ const MemeForm = (props) => {
         px
         <br />
         <label for="fontWeight">
-          <h2 style="display: inline;">font-weight :</h2>
+          <h2 style={{ display: "inline" }}>font-weight :</h2>
         </label>
         <input
           class="MemeEditor_smallNumber__2ESzk"
@@ -89,19 +89,19 @@ const MemeForm = (props) => {
         <input name="underline" id="underline" type="checkbox" />
         &nbsp;
         <label for="underline">
-          <h2 style="display: inline;">underline</h2>
+          <h2 style={{ display: "inline" }}>underline</h2>
         </label>
         &nbsp;
-        <h2 style="display: inline;">/</h2>&nbsp;
+        <h2 style={{ display: "inline" }}>/</h2>&nbsp;
         <label for="italic">
-          <h2 style="display: inline;">italic</h2>
+          <h2 style={{ display: "inline" }}>italic</h2>
         </label>
         &nbsp;
         <input name="italic" id="italic" type="checkbox" />
         <hr />
         <br />
         <label for="frameSizeX">
-          <h2 style="display: inline;">frame size X :</h2>
+          <h2 style={{ display: "inline" }}>frame size X :</h2>
         </label>
         <input
           class="MemeEditor_smallNumber__2ESzk"
@@ -113,7 +113,7 @@ const MemeForm = (props) => {
         />
         px
         <label for="frameSizeY">
-          <h2 style="display: inline;">frame size y :</h2>
+          <h2 style={{ display: "inline" }}>frame size y :</h2>
         </label>
         <input
           class="MemeEditor_smallNumber__2ESzk"
@@ -125,18 +125,8 @@ const MemeForm = (props) => {
         />
         px
         <br />
-        <div
-          class="Button"
-          style="display: inline; background-color: red; color: white;"
-        >
-          reset
-        </div>
-        <div
-          class="Button"
-          style="display: inline; background-color: green; color: white;"
-        >
-          save
-        </div>
+        <button type="reset">reset</button>
+        <button type="submit">save</button>
       </form>
     </div>
   );

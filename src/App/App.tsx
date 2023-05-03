@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Header from "./components/ui/Header/Header";
 import Navbar from "./components/ui/Navbar/Navbar";
-import WFirstGrow from "./components/ui/WFirstGrow/WFirstGrow";
-import MemeForm from "./components/ui/MemeForm/MemeForm";
+import WFirstGrow from "./components/layout/WFirstGrow/WFirstGrow";
+import MemeForm from "./components/MemeForm/MemeForm"
 import Footer from "./components/ui/Footer/Footer";
 import { MemeSVGViewer,emptyMeme } from "orsys-tjs-meme";
 
