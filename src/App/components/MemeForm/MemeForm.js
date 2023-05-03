@@ -4,14 +4,20 @@ import styles from "./MemeForm.module.css";
 import { emptyMeme } from "orsys-tjs-meme";
 
 const MemeForm = (props) => {
-  const [meme, setmeme] = useState(emptyMeme);
+  const [meme, setmeme] = useState(props.meme);
   useEffect(() => {
     return () => {};
   }, [meme]);
   return (
     <div className={styles.MemeForm} data-testid="MemeForm">
       {JSON.stringify(meme)}
-      <form>
+      <form onSubmit={(evt)=>{
+        evt.preventDefault();
+        props.onMemeChange(meme);
+      }}
+      onReset={(evt)=>{
+        props.onMemeChange(emptyMeme);
+      }}> 
         <label htmlFor="titre">
           <h1>Titre</h1>
         </label>
@@ -38,7 +44,7 @@ const MemeForm = (props) => {
         </label>
         <br />
         <input name="text" id="text" type="text" value={meme.text}  onChange={(evt)=>{
-          setmeme({...meme,text:evt.target.checked});
+          setmeme({...meme,text:evt.target.value});
         }}  />
         <br />
         <label htmlFor="x">
@@ -172,7 +178,11 @@ const MemeForm = (props) => {
   );
 };
 
-MemeForm.propTypes = {};
+MemeForm.propTypes = {
+  meme:PropTypes.object.isRequired,
+  onMemeChange: PropTypes.func.isRequired
+
+};
 
 MemeForm.defaultProps = {};
 
