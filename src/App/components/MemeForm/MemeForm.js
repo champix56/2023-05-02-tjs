@@ -1,27 +1,36 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./MemeForm.module.css";
+import { emptyMeme } from "orsys-tjs-meme";
 
-const memeFormInitialState = {};
 const MemeForm = (props) => {
-  const [state, setstate] = useState(memeFormInitialState);
+  const [meme, setmeme] = useState({ ...emptyMeme, key: [true, true, false] });
   useEffect(() => {
     return () => {};
-  }, [state]);
+  }, [meme]);
   return (
     <div className={styles.MemeForm} data-testid="MemeForm">
+      {JSON.stringify(meme)}
       <form>
         <label htmlFor="titre">
           <h1>Titre</h1>
         </label>
         <br />
-        <input name="titre" id="titre" value="React is easy" />
+        <input
+          name="titre"
+          id="titre"
+          value={meme.titre}
+          onChange={(evt) => {
+            console.log(evt.target.value);
+            setmeme({ ...meme, titre: evt.target.value });
+          }}
+        />
         <hr />
         <label htmlFor="image">
           <h2>Image</h2>
         </label>
         <br />
-        <select name="image" id="image">
+        <select name="image" id="image" value={meme.imageId}>
           <option value="1">futurama1.jpg</option>
         </select>
         <hr />
@@ -29,7 +38,7 @@ const MemeForm = (props) => {
           <h2>texte</h2>
         </label>
         <br />
-        <input name="text" id="text" type="text" value="Le js m'a tué" />
+        <input name="text" id="text" type="text" value={meme.text} />
         <br />
         <label htmlFor="x">
           <h2 style={{ display: "inline" }}>x :</h2>
@@ -39,7 +48,7 @@ const MemeForm = (props) => {
           name="x"
           id="x"
           type="number"
-          value="121"
+          value={meme.x}
         />
         <label htmlFor="y">
           <h2 style={{ display: "inline" }}>y :</h2>
@@ -49,7 +58,7 @@ const MemeForm = (props) => {
           name="y"
           id="y"
           type="number"
-          value="65"
+          value={meme.y}
         />
         <hr />
         <br />
@@ -57,7 +66,7 @@ const MemeForm = (props) => {
         <label htmlFor="color">
           <h2 style={{ display: "inline" }}>color :</h2>
         </label>
-        <input name="color" id="color" type="color" value="#FFFFFF" />
+        <input name="color" id="color" type="color" value={meme.color} />
         <br />
         <label htmlFor="fontSize">
           <h2 style={{ display: "inline" }}>font-size :</h2>
@@ -68,7 +77,7 @@ const MemeForm = (props) => {
           id="fontSize"
           type="number"
           min="0"
-          value="73"
+          value={meme.fontSize}
         />
         px
         <br />
@@ -83,10 +92,15 @@ const MemeForm = (props) => {
           min="100"
           step="100"
           max="900"
-          value="900"
+          value={meme.fontWeight}
         />
         <br />
-        <input name="underline" id="underline" type="checkbox" />
+        <input
+          name="underline"
+          id="underline"
+          type="checkbox"
+          checked={meme.underline}
+        />
         &nbsp;
         <label htmlFor="underline">
           <h2 style={{ display: "inline" }}>underline</h2>
@@ -97,7 +111,12 @@ const MemeForm = (props) => {
           <h2 style={{ display: "inline" }}>italic</h2>
         </label>
         &nbsp;
-        <input name="italic" id="italic" type="checkbox" />
+        <input
+          name="italic"
+          id="italic"
+          type="checkbox"
+          checked={meme.italic}
+        />
         <hr />
         <br />
         <label htmlFor="frameSizeX">
@@ -128,6 +147,23 @@ const MemeForm = (props) => {
         <button type="reset">reset</button>
         <button type="submit">save</button>
       </form>
+      {meme.key.map((e, i, liste) => (
+        <input
+          type="checkbox"
+          checked={e}
+          onChange={(evt) => {
+            //meme.key[i]=evt.target.checked;
+            setmeme({
+              ...meme,
+              key: [
+                ...meme.slice(0, i),
+                evt.target.value,
+                ...meme.key.slice(i + 1),
+              ],
+            });
+          }}
+        />
+      ))}
     </div>
   );
 };
