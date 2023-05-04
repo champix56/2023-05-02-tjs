@@ -7,6 +7,7 @@ import Footer from "./components/ui/Footer/Footer";
 import { MemeSVGViewer, emptyMeme, MemeInterface, ImageInterface } from "orsys-tjs-meme";
 import store from "./store/store";
 import { addImages } from "./store/ressources";
+import StoredMemeForm from "./components/MemeForm/StoredMemeForm";
 
 interface iAppState {
   meme: MemeInterface;
@@ -42,8 +43,8 @@ export default class App extends React.Component<IAppProps, iAppState> {
           <MemeSVGViewer meme={this.state.meme} image={
             this.state.images.find((img) => img.id === this.state.meme.imageId)
           } basePath="" />
-          <MemeForm
-            images={this.state.images}
+          <StoredMemeForm
+            //images={this.state.images}
             meme={this.state.meme}
             onMemeChange={(meme: MemeInterface) => {
               this.setState({ meme: meme });

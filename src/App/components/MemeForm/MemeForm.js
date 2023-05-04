@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./MemeForm.module.css";
 import { emptyMeme } from "orsys-tjs-meme";
+import { useSelector } from "react-redux";
+import store from "../../store/store";
 
 const MemeForm = (props) => {
-  
   return (
     <div className={styles.MemeForm} data-testid="MemeForm">
       <form onSubmit={(evt)=>{

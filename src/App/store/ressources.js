@@ -10,9 +10,11 @@ const ressources = createSlice({
   initialState,
   reducers: {
     addImages:(state,action)=>{
+        state.images.splice(0);
         state.images.push(...action.payload);
     },
     addMemes:(state,action)=>{
+        state.memes.splice(0);
         state.memes.push(...action.payload);
     }
   }
