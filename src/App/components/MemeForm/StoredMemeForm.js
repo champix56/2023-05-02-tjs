@@ -13,5 +13,5 @@ export default function StoredMemeForm(props){
   }
   StoredMemeForm.propTypes={
     //meme:PropTypes.object.isRequired,
-    onMemeChange: PropTypes.func.isRequired
+    //onMemeChange: PropTypes.func.isRequired
   }

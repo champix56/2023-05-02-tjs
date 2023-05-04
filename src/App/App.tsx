@@ -46,9 +46,9 @@ export default class App extends React.Component<IAppProps, iAppState> {
           <StoredMemeForm
             //images={this.state.images}
             //meme={this.state.meme}
-            onMemeChange={(meme: MemeInterface) => {
-              this.setState({ meme: meme });
-            }}
+            //onMemeChange={(meme: MemeInterface) => {
+             // this.setState({ meme: meme });
+            //}}
           />
         </WFirstGrow>
         <Footer />
