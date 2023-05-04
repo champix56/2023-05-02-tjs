@@ -6600,10 +6600,10 @@ optionator@^0.9.1:
     type-check "^0.4.0"
     word-wrap "^1.2.3"
 
-orsys-tjs-meme@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/orsys-tjs-meme/-/orsys-tjs-meme-1.0.2.tgz"
-  integrity sha512-aUomg5XXlHRn7Q5LusCvUzsABNaJgei4RCRXyYX7t/C//az5XdqzHs1BGhF30eiGJnnW0p6dwR3FjMwhyUpLfQ==
+orsys-tjs-meme@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/orsys-tjs-meme/-/orsys-tjs-meme-1.0.3.tgz#be86fb4178f83cc5ef49522f9b1801e0bc98cf61"
+  integrity sha512-GmJvDeY+bWwoXZmH6jZfe0D6hETpwqZrfE2Cs4QtFPraTVGRfNgyEVzlaTI2Xs/c3avknRhzKKJxjAhGomPIpA==
 
 p-limit@^2.0.0, p-limit@^2.2.0:
   version "2.3.0"
