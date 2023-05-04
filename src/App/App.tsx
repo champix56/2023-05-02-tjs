@@ -11,29 +11,12 @@ import StoredMemeForm from "./components/MemeForm/StoredMemeForm";
 import StoredMemeSVGViewer from "./components/ui/storedMemeSVGViewer/storedMemeSVGViewer";
 
 interface iAppState {
-  meme: MemeInterface;
-  images: Array<ImageInterface>;
+  // meme: MemeInterface;
+  // images: Array<ImageInterface>;
 }
 interface IAppProps { }
 
 export default class App extends React.Component<IAppProps, iAppState> {
-  constructor(props: IAppProps) {
-    super(props);
-    this.state = { meme: emptyMeme, images: [] };
-  }
-  componentDidMount(): void {
-    fetch('http://localhost:5679/images', {
-      headers: {
-        Origin: 'https://localhost:5679'
-      }
-    })
-      .then(r => r.json())
-      .then(arr => {
-        this.setState({ images: arr });
-        store.dispatch(addImages(arr));
-      });
-  }
-
   render() {
     return (
       <div className="App" data-testid="App">
@@ -41,13 +24,7 @@ export default class App extends React.Component<IAppProps, iAppState> {
         <Navbar />
         <WFirstGrow>
           <StoredMemeSVGViewer basePath="" />
-          <StoredMemeForm
-            //images={this.state.images}
-            //meme={this.state.meme}
-            //onMemeChange={(meme: MemeInterface) => {
-             // this.setState({ meme: meme });
-            //}}
-          />
+          <StoredMemeForm />
         </WFirstGrow>
         <Footer />
       </div>
