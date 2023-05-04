@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./MemeForm.module.css";
 import { emptyMeme } from "orsys-tjs-meme";
+import { useDispatch, useSelector } from "react-redux";
+import { changeMeme } from "../../store/meme.slice";
 
 const MemeForm = (props) => {
   const [meme, setmeme] = useState(props.meme);
@@ -36,7 +38,7 @@ const MemeForm = (props) => {
           setmeme({...meme,imageId:Number(evt.target.value)});
         }} 
         >
-          <option value="1">futurama1.jpg</option>
+         {props.images.map((img,i)=><option value={img.id}>{img.titre}</option>)}
         </select>
         <hr />
         <label htmlFor="text">
@@ -155,7 +157,7 @@ const MemeForm = (props) => {
           id="frameSizeX"
           type="number"
           min="0"
-          value="0"
+          defaultValue="0"
         />
         px
         <label htmlFor="frameSizeY">
@@ -167,7 +169,7 @@ const MemeForm = (props) => {
           id="frameSizeY"
           type="number"
           min="0"
-          value="0"
+          defaultValue="0"
         />
         px
         <br />
@@ -180,10 +182,21 @@ const MemeForm = (props) => {
 
 MemeForm.propTypes = {
   meme:PropTypes.object.isRequired,
-  onMemeChange: PropTypes.func.isRequired
+  onMemeChange: PropTypes.func.isRequired,
+  images: PropTypes.array.isRequired
 
 };
 
 MemeForm.defaultProps = {};
 
 export default MemeForm;
+export const StoreMemeForm=(props)=>{
+  const d=useDispatch();
+  const meme=useSelector(s=>s.meme); 
+  const images=useSelector(s=>s.lists.images); 
+  return <MemeForm meme={meme} onMemeChange={(meme)=>{
+    d(changeMeme(meme));
+  }}
+  images={images}
+  />
+}
