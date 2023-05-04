@@ -32,7 +32,10 @@ const MemeForm = (props) => {
           props.onMemeChange({...props.meme,imageId:Number(evt.target.value)});
         }} 
         >
-          <option value="1">futurama1.jpg</option>
+        {
+          props.images.map((img,position)=><option value={img.id} key={`option-img-${position}`}>{img.titre}</option>
+        )}  
+        <option value="-1">no image</option>
         </select>
         <hr />
         <label htmlFor="text">
@@ -176,6 +179,7 @@ const MemeForm = (props) => {
 
 MemeForm.propTypes = {
   meme:PropTypes.object.isRequired,
+  images: PropTypes.array.isRequired,
   onMemeChange: PropTypes.func.isRequired
 
 };

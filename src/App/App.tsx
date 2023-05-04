@@ -8,23 +8,23 @@ import { MemeSVGViewer, emptyMeme, MemeInterface, ImageInterface } from "orsys-t
 
 interface iAppState {
   meme: MemeInterface;
-  images:Array<ImageInterface>;
+  images: Array<ImageInterface>;
 }
-interface IAppProps {}
+interface IAppProps { }
 
 export default class App extends React.Component<IAppProps, iAppState> {
   constructor(props: IAppProps) {
     super(props);
-    this.state = { meme: emptyMeme, images:[] };
+    this.state = { meme: emptyMeme, images: [] };
   }
   componentDidMount(): void {
-    fetch('http://localhost:5679/images',{
-      headers:{
+    fetch('http://localhost:5679/images', {
+      headers: {
         Origin: 'https://localhost:5679'
       }
     })
-      .then(r=>r.json())
-      .then(arr=>this.setState({images:arr}));
+      .then(r => r.json())
+      .then(arr => this.setState({ images: arr }));
   }
 
   render() {
@@ -34,8 +34,11 @@ export default class App extends React.Component<IAppProps, iAppState> {
         <Navbar />
         {JSON.stringify(this.state)}
         <WFirstGrow>
-          <MemeSVGViewer meme={this.state.meme} image={undefined} />
+          <MemeSVGViewer meme={this.state.meme} image={
+              this.state.images.find((img)=>img.id===this.state.meme.imageId)
+          } basePath="" />
           <MemeForm
+            images={this.state.images}
             meme={this.state.meme}
             onMemeChange={(meme: MemeInterface) => {
               this.setState({ meme: meme });
