@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {emptyMeme} from 'orsys-tjs-meme'
+const initialState=emptyMeme;
 const memes = createSlice({
   name: "meme",
-  emptyMeme,
+  initialState,
   reducers: {
     changeMeme:(state,action)=>{
       state=action.payload;
