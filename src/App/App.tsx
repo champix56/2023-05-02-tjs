@@ -8,6 +8,7 @@ import { MemeSVGViewer, emptyMeme, MemeInterface, ImageInterface } from "orsys-t
 import store from "./store/store";
 import { addImages } from "./store/ressources";
 import StoredMemeForm from "./components/MemeForm/StoredMemeForm";
+import StoredMemeSVGViewer from "./components/ui/storedMemeSVGViewer/storedMemeSVGViewer";
 
 interface iAppState {
   meme: MemeInterface;
@@ -38,11 +39,8 @@ export default class App extends React.Component<IAppProps, iAppState> {
       <div className="App" data-testid="App">
         <Header />
         <Navbar />
-        {JSON.stringify(this.state)}
         <WFirstGrow>
-          <MemeSVGViewer meme={this.state.meme} image={
-            this.state.images.find((img) => img.id === this.state.meme.imageId)
-          } basePath="" />
+          <StoredMemeSVGViewer basePath="" />
           <StoredMemeForm
             //images={this.state.images}
             //meme={this.state.meme}
