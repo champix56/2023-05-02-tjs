@@ -26,7 +26,8 @@
     "eject": "react-scripts eject",
     "layoutCmp": "npx generate-react-cli c --type=layoutCmp",
     "uiCmp": "npx generate-react-cli c --type=uiCmp",
-    "functionCmp": "npx generate-react-cli c --type=functionCmp"
+    "functionCmp": "npx generate-react-cli c --type=functionCmp",
+    "json":"npx json-server -p 5679 db/db.json"
   },
   "eslintConfig": {
     "extends": [
