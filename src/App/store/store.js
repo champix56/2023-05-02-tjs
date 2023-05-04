@@ -3,7 +3,7 @@ import ressourcesReducer from "./ressources";
 // const store = createStore(combineReducers({ ressources: ressourcesReducer}));
 const store=configureStore({
     reducer:combineReducers({ressources:ressourcesReducer}),
- //   devTools:false
+    devTools:true
 });
 
 
