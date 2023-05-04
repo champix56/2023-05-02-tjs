@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import { changeMeme } from '../../store/meme';
 export default function StoredMemeForm(props){
     const images=useSelector(storeState=>{return storeState.ressources.images});
-    const meme=useSelector(storeState=>{return storeState.ressources.meme});
+    const meme=useSelector(storeState=>{return storeState.meme});
     const storeDispatch=useDispatch();
     return <MemeForm {...props}  meme={meme} images={images} onMemeChange={(memeFromChild)=>{
         storeDispatch(changeMeme(memeFromChild));

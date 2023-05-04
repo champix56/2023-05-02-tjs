@@ -6,10 +6,10 @@ const memes = createSlice({
   initialState,
   reducers: {
     changeMeme:(state,action)=>{
-      state=action.payload;
+      Object.assign(state,action.payload);
     },
     clearMeme:(state)=>{
-      state=emptyMeme;
+      Object.assign(state,emptyMeme);
     }
   },
 });
