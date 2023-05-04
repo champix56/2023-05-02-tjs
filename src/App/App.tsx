@@ -5,6 +5,8 @@ import WFirstGrow from "./components/layout/WFirstGrow/WFirstGrow";
 import MemeForm from "./components/MemeForm/MemeForm";
 import Footer from "./components/ui/Footer/Footer";
 import { MemeSVGViewer, emptyMeme, MemeInterface, ImageInterface } from "orsys-tjs-meme";
+import store from "./store/store";
+import { addImages } from "./store/ressources";
 
 interface iAppState {
   meme: MemeInterface;
@@ -24,7 +26,10 @@ export default class App extends React.Component<IAppProps, iAppState> {
       }
     })
       .then(r => r.json())
-      .then(arr => this.setState({ images: arr }));
+      .then(arr => {
+        this.setState({ images: arr });
+        store.dispatch(addImages(arr));
+      });
   }
 
   render() {
@@ -35,7 +40,7 @@ export default class App extends React.Component<IAppProps, iAppState> {
         {JSON.stringify(this.state)}
         <WFirstGrow>
           <MemeSVGViewer meme={this.state.meme} image={
-              this.state.images.find((img)=>img.id===this.state.meme.imageId)
+            this.state.images.find((img) => img.id === this.state.meme.imageId)
           } basePath="" />
           <MemeForm
             images={this.state.images}
