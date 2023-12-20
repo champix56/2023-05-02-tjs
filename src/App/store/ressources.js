@@ -1,4 +1,3 @@
-import { assertConditional } from "@babel/types";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -22,11 +21,11 @@ const ressources = createSlice({
   extraReducers: (builder) => {
     builder.addCase("ressources/fetchImages/fulfilled", (state, action) => {
       state.images.splice(0);
-      state.images.push(action.payload);
+      state.images.push(...action.payload);
     })
     .addCase("ressources/fetchMemes/fulfilled",(state,action)=>{
       state.memes.splice(0);
-      state.memes.push(action.payload);
+      state.memes.push(...action.payload);
     })
     .addDefaultCase((state,action)=>{
       console.log(action);

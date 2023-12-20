@@ -155,7 +155,10 @@ const MemeForm = (props) => {
           id="frameSizeX"
           type="number"
           min="0"
-          value="0"
+          value={props.meme.frameSizeX}
+          onChange={(evt)=>{
+          props.onMemeChange({...props.meme,frameSizeX:Number(evt.target.value)});
+        }} 
         />
         px
         <label htmlFor="frameSizeY">
@@ -167,7 +170,10 @@ const MemeForm = (props) => {
           id="frameSizeY"
           type="number"
           min="0"
-          value="0"
+          value={props.meme.frameSizeY}
+          onChange={(evt)=>{
+          props.onMemeChange({...props.meme,frameSizeY:Number(evt.target.value)});
+        }}
         />
         px
         <br />

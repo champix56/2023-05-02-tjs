@@ -66,6 +66,10 @@
       "color": "#000000",
       "frameSizeX": 0,
       "frameSizeY": 0
+    },
+    {
+      "abc": 123,
+      "id": 2
     }
   ]
 }

@@ -1,0 +1,376 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "images",
+        "memes"
+    ],
+    "properties": {
+        "images": {
+            "type": "array",
+            "default": [],
+            "title": "The images Schema",
+            "items": {
+                "type": "object",
+                "title": "A Schema",
+                "required": [
+                    "id",
+                    "titre",
+                    "url",
+                    "w",
+                    "h"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "title": "The id Schema",
+                        "examples": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4
+                        ],
+                        "minLength": 2
+                    },
+                    "titre": {
+                        "type": "string",
+                        "title": "The titre Schema",
+                        "examples": [
+                            "react'n roll",
+                            "deformed",
+                            "Not work",
+                            "Wait long time",
+                            "old dog"
+                        ]
+                    },
+                    "url": {
+                        "type": "string",
+                        "title": "The url Schema",
+                        "examples": [
+                            "https://t4.ftcdn.net/jpg/02/24/11/57/240_F_224115780_2ssvcCoTfQrx68Qsl5NxtVIDFWKtAgq2.jpg",
+                            "https://wallpapers.com/images/featured/r8l2gifvpdd0kt25.jpg",
+                            "https://t3.ftcdn.net/jpg/00/08/59/86/240_F_8598647_6ULL8YFqpJoX6XCuFCVKsWRf1QP1CeK8.jpg",
+                            "https://images.pexels.com/photos/3756616/pexels-photo-3756616.jpeg?cs=srgb\u0026dl=pexels-andrea-piacquadio-3756616.jpg\u0026fm=jpg",
+                            "https://i.insider.com/5e74de0b235c1801f042b048?width=750\u0026format=jpeg\u0026auto=webp"
+                        ]
+                    },
+                    "w": {
+                        "type": "integer",
+                        "title": "The w Schema",
+                        "examples": [
+                            543,
+                            1125,
+                            336,
+                            4067,
+                            750
+                        ]
+                    },
+                    "h": {
+                        "type": "integer",
+                        "title": "The h Schema",
+                        "examples": [
+                            240,
+                            900,
+                            6100,
+                            562
+                        ]
+                    }
+                }
+            },
+            "examples": [
+                [{
+                    "id": 0,
+                    "titre": "react'n roll",
+                    "url": "https://t4.ftcdn.net/jpg/02/24/11/57/240_F_224115780_2ssvcCoTfQrx68Qsl5NxtVIDFWKtAgq2.jpg",
+                    "w": 543,
+                    "h": 240
+                },
+                {
+                    "id": 1,
+                    "titre": "deformed",
+                    "url": "https://wallpapers.com/images/featured/r8l2gifvpdd0kt25.jpg",
+                    "w": 1125,
+                    "h": 900
+                },
+                {
+                    "id": 2,
+                    "titre": "Not work",
+                    "url": "https://t3.ftcdn.net/jpg/00/08/59/86/240_F_8598647_6ULL8YFqpJoX6XCuFCVKsWRf1QP1CeK8.jpg",
+                    "w": 336,
+                    "h": 240
+                },
+                {
+                    "id": 3,
+                    "titre": "Wait long time",
+                    "url": "https://images.pexels.com/photos/3756616/pexels-photo-3756616.jpeg?cs=srgb\u0026dl=pexels-andrea-piacquadio-3756616.jpg\u0026fm=jpg",
+                    "w": 4067,
+                    "h": 6100
+                },
+                {
+                    "id": 4,
+                    "titre": "old dog",
+                    "url": "https://i.insider.com/5e74de0b235c1801f042b048?width=750\u0026format=jpeg\u0026auto=webp",
+                    "w": 750,
+                    "h": 562
+                }]
+            ]
+        },
+        "memes": {
+            "type": "array",
+            "default": [],
+            "title": "The memes Schema",
+            "items": {
+                "type": "object",
+                "title": "A Schema",
+                "required": [
+                    "id",
+                    "titre",
+                    "text",
+                    "x",
+                    "y",
+                    "fontWeight",
+                    "fontSize",
+                    "underline",
+                    "italic",
+                    "imageId",
+                    "color",
+                    "frameSizeX",
+                    "frameSizeY"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "title": "The id Schema",
+                        "examples": [
+                            0,
+                            1
+                        ]
+                    },
+                    "titre": {
+                        "type": "string",
+                        "title": "The titre Schema",
+                        "examples": [
+                            "React n'roll",
+                            "Long wait"
+                        ]
+                    },
+                    "text": {
+                        "type": "string",
+                        "title": "The text Schema",
+                        "examples": [
+                            "React n'roll",
+                            "Long wait"
+                        ]
+                    },
+                    "x": {
+                        "type": "integer",
+                        "title": "The x Schema",
+                        "examples": [
+                            100
+                        ]
+                    },
+                    "y": {
+                        "type": "integer",
+                        "title": "The y Schema",
+                        "examples": [
+                            20
+                        ]
+                    },
+                    "fontWeight": {
+                        "type": "string",
+                        "title": "The fontWeight Schema",
+                        "examples": [
+                            "500",
+                            "900"
+                        ]
+                    },
+                    "fontSize": {
+                        "type": "integer",
+                        "title": "The fontSize Schema",
+                        "examples": [
+                            30,
+                            100
+                        ]
+                    },
+                    "underline": {
+                        "type": "boolean",
+                        "title": "The underline Schema",
+                        "examples": [
+                            false,
+                            true
+                        ]
+                    },
+                    "italic": {
+                        "type": "boolean",
+                        "title": "The italic Schema",
+                        "examples": [
+                            false
+                        ]
+                    },
+                    "imageId": {
+                        "type": "integer",
+                        "title": "The imageId Schema",
+                        "examples": [
+                            0,
+                            3
+                        ]
+                    },
+                    "color": {
+                        "type": "string",
+                        "title": "The color Schema",
+                        "examples": [
+                            "#000000"
+                        ]
+                    },
+                    "frameSizeX": {
+                        "type": "integer",
+                        "title": "The frameSizeX Schema",
+                        "examples": [
+                            0
+                        ]
+                    },
+                    "frameSizeY": {
+                        "type": "integer",
+                        "title": "The frameSizeY Schema",
+                        "examples": [
+                            0
+                        ]
+                    }
+                },
+                "examples": [{
+                    "id": 0,
+                    "titre": "React n'roll",
+                    "text": "React n'roll",
+                    "x": 100,
+                    "y": 20,
+                    "fontWeight": "500",
+                    "fontSize": 30,
+                    "underline": false,
+                    "italic": false,
+                    "imageId": 0,
+                    "color": "#000000",
+                    "frameSizeX": 0,
+                    "frameSizeY": 0
+                },
+                {
+                    "id": 1,
+                    "titre": "Long wait",
+                    "text": "Long wait",
+                    "x": 100,
+                    "y": 20,
+                    "fontWeight": "900",
+                    "fontSize": 100,
+                    "underline": true,
+                    "italic": false,
+                    "imageId": 3,
+                    "color": "#000000",
+                    "frameSizeX": 0,
+                    "frameSizeY": 0
+                }]
+            },
+            "examples": [
+                [{
+                    "id": 0,
+                    "titre": "React n'roll",
+                    "text": "React n'roll",
+                    "x": 100,
+                    "y": 20,
+                    "fontWeight": "500",
+                    "fontSize": 30,
+                    "underline": false,
+                    "italic": false,
+                    "imageId": 0,
+                    "color": "#000000",
+                    "frameSizeX": 0,
+                    "frameSizeY": 0
+                },
+                {
+                    "id": 1,
+                    "titre": "Long wait",
+                    "text": "Long wait",
+                    "x": 100,
+                    "y": 20,
+                    "fontWeight": "900",
+                    "fontSize": 100,
+                    "underline": true,
+                    "italic": false,
+                    "imageId": 3,
+                    "color": "#000000",
+                    "frameSizeX": 0,
+                    "frameSizeY": 0
+                }]
+            ]
+        }
+    },
+    "examples": [{
+        "images": [{
+            "id": 0,
+            "titre": "react'n roll",
+            "url": "https://t4.ftcdn.net/jpg/02/24/11/57/240_F_224115780_2ssvcCoTfQrx68Qsl5NxtVIDFWKtAgq2.jpg",
+            "w": 543,
+            "h": 240
+        },
+        {
+            "id": 1,
+            "titre": "deformed",
+            "url": "https://wallpapers.com/images/featured/r8l2gifvpdd0kt25.jpg",
+            "w": 1125,
+            "h": 900
+        },
+        {
+            "id": 2,
+            "titre": "Not work",
+            "url": "https://t3.ftcdn.net/jpg/00/08/59/86/240_F_8598647_6ULL8YFqpJoX6XCuFCVKsWRf1QP1CeK8.jpg",
+            "w": 336,
+            "h": 240
+        },
+        {
+            "id": 3,
+            "titre": "Wait long time",
+            "url": "https://images.pexels.com/photos/3756616/pexels-photo-3756616.jpeg?cs=srgb\u0026dl=pexels-andrea-piacquadio-3756616.jpg\u0026fm=jpg",
+            "w": 4067,
+            "h": 6100
+        },
+        {
+            "id": 4,
+            "titre": "old dog",
+            "url": "https://i.insider.com/5e74de0b235c1801f042b048?width=750\u0026format=jpeg\u0026auto=webp",
+            "w": 750,
+            "h": 562
+        }],
+        "memes": [{
+            "id": 0,
+            "titre": "React n'roll",
+            "text": "React n'roll",
+            "x": 100,
+            "y": 20,
+            "fontWeight": "500",
+            "fontSize": 30,
+            "underline": false,
+            "italic": false,
+            "imageId": 0,
+            "color": "#000000",
+            "frameSizeX": 0,
+            "frameSizeY": 0
+        },
+        {
+            "id": 1,
+            "titre": "Long wait",
+            "text": "Long wait",
+            "x": 100,
+            "y": 20,
+            "fontWeight": "900",
+            "fontSize": 100,
+            "underline": true,
+            "italic": false,
+            "imageId": 3,
+            "color": "#000000",
+            "frameSizeX": 0,
+            "frameSizeY": 0
+        }]
+    }]
+}
